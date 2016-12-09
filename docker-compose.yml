@@ -1,0 +1,26 @@
+version: '2'
+services:
+  front:
+    image: litleleprikon/front
+    ports:
+      - "80:80"
+    depends_on:
+     - node_1
+     - node_2
+     - node_3
+  node_1:
+    image: litleleprikon/back
+    depends_on:
+     - mongo
+  node_2:
+    image: litleleprikon/back
+    depends_on:
+     - mongo
+  node_3:
+    image: litleleprikon/back
+    depends_on:
+     - mongo
+  mongo:
+    image: mongo
+  redis:
+    image: redis
