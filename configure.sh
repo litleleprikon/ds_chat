@@ -16,7 +16,7 @@ fi
 
 printf "Front: [${GREEN}OK${NC}]\n"
 
-if  [[ "${?}" != "0" ]]; then
+if [[ "$(docker images -q litleleprikon/back 2> /dev/null)" == "" ]]; then
 	printf "${YELLOW}Docker image litleleprikon/back is not found\nBuilding it.${NC}\n"
 	pushd back
 	docker build -t litleleprikon/back .

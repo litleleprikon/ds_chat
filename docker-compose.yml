@@ -1,7 +1,7 @@
 version: '2'
 services:
   front:
-    image: litleleprikon/front
+    image: st.os3.su:5000/litleleprikon/front
     ports:
       - "80:80"
     depends_on:
@@ -9,15 +9,15 @@ services:
      - node_2
      - node_3
   node_1:
-    image: litleleprikon/back
+    image: st.os3.su:5000/litleleprikon/back
     depends_on:
      - mongo
   node_2:
-    image: litleleprikon/back
+    image: st.os3.su:5000/litleleprikon/back
     depends_on:
      - mongo
   node_3:
-    image: litleleprikon/back
+    image: st.os3.su:5000/litleleprikon/back
     depends_on:
      - mongo
   mongo:
