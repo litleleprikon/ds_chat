@@ -4,7 +4,7 @@ YELLOW='\033[0;33m'
 GREEN='\033[0;32m'
 NC='\033[0m'
 
-ssh a_abdulmadzhidov@35.187.121.189 << EOF
+ssh a_abdulmadzhidov@35.187.162.188 << EOF
 
 printf "${YELLOW}Cloning code from https://github.com/mrZizik/ds_chat${NC}\n"
 rm -rf ds_chat
