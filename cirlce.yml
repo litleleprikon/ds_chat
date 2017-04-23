@@ -2,13 +2,6 @@ machine:
   services:
     - docker
 
-dependencies:
-  override:
-    - ps
-
-test:
-  override:
-    - ps
 deployment:
   production:
     branch: master
