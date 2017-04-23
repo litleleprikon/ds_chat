@@ -4,7 +4,7 @@ MAINTAINER litleleprikon <litleleprikon@gmail.com>
 ADD src /var/www/ds_chat
 WORKDIR /var/www/ds_chat
 
-RUN apt install redis
+RUN apt install redis-server
 RUN npm i
 
 EXPOSE 3001
