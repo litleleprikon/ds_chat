@@ -2,13 +2,6 @@ machine:
   services:
     - docker
 
-dependencies:
-  override:
-    - docker build -t mrzizik/sample-node .
-
-test:
-  override:
-    - docker run mrzizik/sample-node npm test
 deployment:
   production:
     branch: master
