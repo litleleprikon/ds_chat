@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install nginx -y; \
 	chown -R www-data:www-data /var/www; \
 	rm /etc/nginx/sites-enabled/default
 
-ADD ./build /var/www/ds_chat
+ADD ./build /var/www
 ADD ./ds_chat.conf /etc/nginx/sites-enabled/ds_chat.conf
 
 EXPOSE 80
