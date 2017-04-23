@@ -12,7 +12,7 @@ git clone https://github.com/mrZizik/ds_chat
 printf "Cloning: [${GREEN}OK${NC}]\n"
 
 printf "${YELLOW}Docker image front is building.${NC}\n"
-cd ../front
+cd ds_chat/front
 docker stop front || true
 docker rm front || true
 docker rmi front || true
@@ -21,7 +21,7 @@ docker run -d --name front -p 80:80 front
 printf "Front: [${GREEN}OK${NC}]\n"
 
 printf "${YELLOW}Docker image back is building.${NC}\n"
-cd ds_chat/back
+cd ../back
 docker stop back || true
 docker rm back || true
 docker rmi back || true
