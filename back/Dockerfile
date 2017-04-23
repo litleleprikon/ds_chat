@@ -4,6 +4,8 @@ MAINTAINER litleleprikon <litleleprikon@gmail.com>
 ADD src /var/www/ds_chat
 WORKDIR /var/www/ds_chat
 
+RUN apt install redis
 RUN npm i
+
 EXPOSE 3001
 CMD ["npm", "start"]
