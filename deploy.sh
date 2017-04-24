@@ -4,20 +4,19 @@ YELLOW='\033[0;33m'
 GREEN='\033[0;32m'
 NC='\033[0m'
 
-ssh a_abdulmadzhidov@35.187.162.188 << EOF
-
 printf "${YELLOW}Cloning code from https://github.com/mrZizik/ds_chat${NC}\n"
 rm -rf ds_chat
 git clone https://github.com/mrZizik/ds_chat
 printf "Cloning: [${GREEN}OK${NC}]\n"
 
+
 printf "${YELLOW}Docker image back is building.${NC}\n"
 cd ds_chat/back
 docker stop back || true
 docker rm --force back || true
-docker rmi --force back || true
-docker build -t back .
-docker run -d --name back -p 3001:3001 back
+docker rmi --force mrzizik/back || true
+docker build -t mrzizik/back .
+docker push mrzizik/back
 printf "Back: [${GREEN}OK${NC}]\n"
 
 
@@ -25,10 +24,17 @@ printf "${YELLOW}Docker image front is building.${NC}\n"
 cd ../front
 docker stop front || true
 docker rm --force front || true
-docker rmi --force front || true
-docker build -t front .
-docker run -d --name front -p 80:80 front
+docker rmi --force mrzizik/front || true
+docker build -t mrzizik/front .
+docker push mrzizik/front
 printf "Front: [${GREEN}OK${NC}]\n"
+
+printf "${YELLOW}Pushing docker compose.${NC}\n"
+cd ..
+scp docker-compose.yml a_abdulmadzhidov@35.187.162.188:/home/a_abdulmadzhidov/docker-compose.yml
+ssh a_abdulmadzhidov@35.187.162.188 << EOF
+docker-compose up
+
 
 
 
