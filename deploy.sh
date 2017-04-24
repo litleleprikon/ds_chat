@@ -33,8 +33,7 @@ printf "${YELLOW}Pushing docker compose.${NC}\n"
 cd ..
 scp docker-compose.yml a_abdulmadzhidov@35.187.162.188:/home/a_abdulmadzhidov/docker-compose.yml
 ssh a_abdulmadzhidov@35.187.162.188 << EOF
-sudo curl -o /usr/local/bin/docker-compose -L
-https://github.com/docker/compose/releases/download/1.11.2/docker-compose-
+sudo curl -o /usr/local/bin/docker-compose -L https://github.com/docker/compose/releases/download/1.11.2/docker-compose-
 $(uname -s)-$(uname -m)
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose up
