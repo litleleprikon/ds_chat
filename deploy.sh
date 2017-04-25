@@ -11,7 +11,7 @@ git clone https://github.com/mrZizik/ds_chat
 cd ds_chat
 /etc/sonarscan/bin/sonar-scanner
 printf "Cheking: [${GREEN}OK${NC}]\n"
-
+exit
 
 printf "${YELLOW}Cloning code from https://github.com/mrZizik/ds_chat${NC}\n"
 rm -rf ds_chat
