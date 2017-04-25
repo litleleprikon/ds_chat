@@ -28,7 +28,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://mongo/ds_chat');
 app.use(bodyParser.json());
 
-io.adapter(redis({ host: '127.0.0.1', port: 6379 }));
+io.adapter(redis({ host: 'redis', port: 6379 }));
 
 app.post('/api/register', function (req, res) {
     console.log('New register: request')
